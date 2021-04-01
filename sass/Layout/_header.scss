@@ -1,0 +1,185 @@
+/* CSS HEADER NAVBAR */
+.myNavBar {
+    background-color: $color-white-0;
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 80px;
+    padding: 0px $pd-2 + 2;
+    border-bottom: 1px solid $color-gray-9;
+    transition: 0s;
+    scroll-behavior: smooth;
+    .myNavBar__left {
+        display: flex;
+        padding: 0px;
+        height: 70px !important;
+        a {
+            @include styleText($color-gray-2, $fs-2, $fw-4);
+            padding: $pd-1 + 3 $pd-4 $pd-4 0;
+            margin-right: 0px;
+            height: 32px;
+        }
+        form.myNavBar__search {
+            width: 70%;
+            height: 70px;
+            padding: $pd-1 $pd-0 + 3;
+            position: relative;
+            @include styleFormSearch(33px, $pd-5, $pd-4 + 1, 20%);
+        }
+    }
+    .myNavBar__right {
+        float: right;
+        ul {
+            li.active {
+                a {
+                    color: $color-green-1;
+                    &:hover {
+                        color: $color-green-2;
+                    }
+                }
+            }
+            li {
+                padding: 0px $pd-6;
+                a {
+                    padding: 0px !important;
+                    white-space: nowrap;
+                    @include styleText($color-gray-0, $fs-1, $fw-1);
+                    transition: all 0.2s;
+                }
+            }
+            li.myNavBar__item1 {
+                i {
+                    padding-right: $pd-0 - 1 !important;
+                }
+                &:hover a {
+                    color: $color-green-0;
+                }
+            }
+            li.myNavBar__item2 {
+                &:hover a {
+                    color: $color-gray-10;
+                }
+            }
+        }
+    }
+
+    /* RESPONSIVE HEADER NAVBAR */
+    @include responsive("extra-large") {
+        white-space: nowrap;
+        li.myNavBar__item1 {
+            display: none;
+        }
+    }
+    @include responsive("large") {
+        form.myNavBar__search {
+            .input-group-append {
+                display: none;
+            }
+        }
+    }
+    @include responsive("medium") {
+        white-space: nowrap;
+        form.myNavBar__search {
+            input {
+                border-right-color: $color-gray-9;
+            }
+            .input-group-append {
+                display: none;
+            }
+        }
+        li.myNavBar__item1 {
+            display: none;
+        }
+    }
+    @include responsive("small") {
+        white-space: nowrap;
+        .myNavBar__right {
+            display: block;
+        }
+        form.myNavBar__search {
+            display: none;
+        }
+    }
+}
+
+/* CSS NAVBAR TRANSITION */
+.myNavBar__transition {
+    position: absolute;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 80px;
+    padding: 0px $pd-2 + 2;
+    transition: 0s;
+    scroll-behavior: smooth;
+    text-align: center;
+    .myNavBar__left {
+        float: left;
+        padding: 0px;
+        a {
+            @include styleText($color-gray-2, $fs-2, $fw-4);
+            padding: $pd-1 + 3 $pd-4 $pd-4 0;
+            margin-right: 0px;
+        }
+    }
+    .myNavBar__right {
+        float: right;
+        ul {
+            li.active {
+                a {
+                    color: $color-green-1;
+                    &:hover {
+                        color: $color-green-2;
+                    }
+                }
+            }
+            li {
+                padding: 0px $pd-6;
+                a {
+                    padding: 0px !important;
+                    @include styleText($color-gray-0, $fs-1, $fw-1);
+                    transition: all 0.2s;
+                    white-space: nowrap;
+                }
+            }
+            li.myNavBar__item1 {
+                i {
+                    padding-right: $pd-0 - 1 !important;
+                }
+                &:hover a {
+                    color: $color-green-0;
+                }
+            }
+            li.myNavBar__item2 {
+                i {
+                    padding-right: $pd-0 - 1 !important;
+                }
+                &:hover a {
+                    color: $color-green-0;
+                }
+            }
+        }
+    }
+
+    /* RESPONSIVE NAVBAR TRANSITION */
+    @include responsive("extra-large") {
+        white-space: nowrap;
+    }
+    @include responsive("large") {
+        white-space: nowrap;
+        li.myNavBar__item1 {
+            display: none;
+        }
+    }
+    @include responsive("small") {
+        white-space: nowrap;
+        .myNavBar__right {
+            display: block;
+        }
+    }
+}

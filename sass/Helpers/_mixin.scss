@@ -1,0 +1,72 @@
+@mixin styleText($color, $fs, $fw) {
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+}
+@mixin styleButton($color, $bg-color, $border, $fs, $fw, $pd-y, $pd-x) {
+    color: $color;
+    background-color: $bg-color;
+    border: 1px solid $border;
+    font-size: $fs;
+    font-weight: $fw;
+    padding: $pd-y $pd-x;
+    cursor: pointer;
+}
+
+@mixin hoverButton($color-hover, $bg-hover, $border-hover) {
+    color: $color-hover;
+    background-color: $bg-hover;
+    border: 1px solid $border-hover;
+}
+
+@mixin styleFormSearch($height, $pdTopBot, $pdRightLef, $positionTopSearch) {
+    span.search__item {
+        display: inline-block;
+        position: absolute;
+        left: 8px;
+        top: $positionTopSearch;
+        z-index: 30;
+        color: $color-gray-10;
+    }
+    input {
+        padding: $pd-0 $pd-0 $pd-0 $pd-2;
+        border-radius: $border-darius-0 0 0 $border-darius-0;
+        border-color: $color-gray-9;
+        border-right: none;
+        height: $height;
+        &:focus {
+            box-shadow: none;
+            border-color: $color-gray-8;
+        }
+        &::placeholder {
+            @include styleText($color-gray-1, $fs-1, $fw-2);
+        }
+    }
+    .input-group-text {
+        @include styleText($color-white-0, $fs-0, $fw-0);
+        background-color: $color-green-0;
+        border-color: $color-green-0;
+        //padding: $pd-5 $pd-4 + 1;
+        padding: $pdTopBot $pdRightLef;
+        cursor: pointer;
+        height: $height;
+        transition: all 0.5s;
+        text-align: center;
+        &:hover {
+            background-color: $color-green-3;
+        }
+    }
+}
+@mixin responsive($screen) {
+    @if map-has-key($map: $breakpoints, $key: $screen) {
+        $value: map-get(
+            $map: $breakpoints,
+            $key: $screen,
+        );
+        @media screen and (max-width: $value) {
+            @content;
+        }
+    } @else {
+        @warn "`{$screen}` isn't exist in breakpoints";
+    }
+}

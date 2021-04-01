@@ -1,0 +1,38 @@
+/* CSS MENU */
+.menu {
+    position: fixed;
+    z-index: 8888;
+    transition: 0.5s;
+    opacity: 0;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: $color-white-0;
+    .menu__content {
+        padding: 0px $pd-2 + 2;
+        border-bottom: 1px solid $color-gray-9;
+        ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            li {
+                align-items: center;
+                a {
+                    @include styleText($color-gray-1, $fs-1, $fw-2);
+                    text-decoration: none;
+                    padding: $pd-5 0;
+                    display: inline-block;
+                    border-bottom: 3px solid transparent;
+                }
+                &:hover a {
+                    border-bottom: 3px solid $color-green-0;
+                }
+            }
+        }
+    }
+    /* RESPONSIVE MENU */
+    @include responsive("extra-large") {
+        display: none;
+    }
+}

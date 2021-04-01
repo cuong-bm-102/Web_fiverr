@@ -1,0 +1,57 @@
+/* CSS GUIDES */
+.guides {
+    .guides__content {
+        @extend %styleWidth;
+        .guides__top {
+            display: flex;
+            justify-content: space-between;
+            a {
+                text-decoration: none;
+                padding: $pd-1 0 $pd-4 0 !important;
+                @include styleText($color-blue-0, $fs-1, $fw-2);
+                transition: all 0.5s;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        .guides__bottom {
+            display: flex;
+            flex-wrap: wrap;
+            .guides__item {
+                border-radius: $border-darius-0 + 1;
+                cursor: pointer;
+                img {
+                    width: 100%;
+                    padding-bottom: $pd-1;
+                }
+                h6 {
+                    margin: 0;
+                    margin-top: $mg-0;
+                }
+                p {
+                    @include styleText($color-gray-0, $fs-1 - 1, $fw-2);
+                }
+            }
+        }
+    }
+}
+
+/* CSS BUSINESS */
+.business {
+    .business__content {
+        background-image: url("../images/coverbusiness_01.jpg");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        @extend %styleWidth;
+        padding: 50px;
+        h2 {
+            margin-bottom: 0;
+        }
+        p {
+            margin-bottom: $mg-6;
+            font-size: $fs-1;
+        }
+    }
+}

@@ -1,0 +1,274 @@
+/* CSS CAROUSEL */
+.carousel {
+    background: $color-white-1;
+    min-height: 580px;
+    padding-top: 100px;
+    position: relative;
+    width: 100%;
+    .carousel__content {
+        .over__overlay {
+            position: absolute;
+            display: block;
+            bottom: 0;
+            right: 0;
+            border-bottom: 30vw solid $color-green-3;
+            border-left: 80vw solid transparent;
+        }
+        .carousel__item1 {
+            padding-left: 150px;
+            width: 700px;
+            z-index: 200;
+            position: absolute;
+            h1 {
+                @include styleText($color-black-3, $fs-2 + 4, $fw-0);
+                padding-bottom: $pd-1;
+                display: block;
+            }
+            .carousel__search {
+                width: 550px;
+                height: 70px;
+                @include styleFormSearch(48px, $pd-6 + 1, $pd-1 + 4, 27%);
+            }
+            .carousel__popular {
+                display: flex;
+                span {
+                    padding-right: $pd-6 + 2;
+                    @include styleText($color-gray-0, $fs-0, $fw-1);
+                }
+                ul {
+                    list-style-type: none;
+                    display: flex;
+                    li {
+                        margin-right: $mg-1;
+                        white-space: nowrap;
+                        a {
+                            background-color: transparent;
+                            padding: 0 $pd-5;
+                            border: 1px solid $color-gray-6;
+                            border-radius: $border-darius-0;
+                            color: #62646a;
+                            text-decoration: none;
+                            transition: all 0.5s;
+                            &:hover {
+                                background-color: $color-gray-11;
+                                border: 1px solid $color-gray-11;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .carousel__item2 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 60;
+            .owl-carousel.carousel--owl-carousel {
+                margin-top: 96px;
+                width: 40%;
+                float: right;
+                clear: both;
+                .owl-stage {
+                    transition: all 0.5s !important;
+                }
+                .owl-nav {
+                    button.owl-next,
+                    button.owl-prev {
+                        display: none;
+                    }
+                }
+                .item {
+                    width: 496px;
+                    height: 484px;
+                    float: right;
+                    margin-right: 55px;
+                    left: 0;
+                    .carousel__img {
+                        width: 100%;
+                        height: 80%;
+                    }
+                    .carousel__star {
+                        margin-top: 30px;
+                        text-align: center;
+                        i {
+                            color: $color-yellow;
+                        }
+                        p {
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+/* RESPONSIVE CAROUSEL */
+    @include responsive("extra-large") {
+        .carousel__content {
+            .carousel__item1 {
+                padding-left: 50px;
+                h1 {
+                    font: $fs-4 !important;
+                }
+            }
+            .carousel__item2 {
+                .owl-carousel.carousel--owl-carousel {
+                    .item {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+    @include responsive("large") {
+        .carousel__content {
+            .carousel__item1 {
+                padding-left: 100px;
+                padding-top: 70px;
+                h1 {
+                    font-size: $fs-4;
+                }
+            }
+            .carousel__item2 {
+                display: none;
+            }
+            .over__overlay {
+                display: none;
+            }
+        }
+    }
+    @include responsive("medium") {
+        .carousel__content {
+            .carousel__item1 {
+                width: 70%;
+                padding-left: 50px;
+                padding-top: 70px;
+                h1 {
+                    font-size: $fs-4;
+                }
+                form.carousel__search {
+                    width: 100%;
+                }
+            }
+            .carousel__item2 {
+                display: none;
+            }
+            .over__overlay {
+                display: none;
+            }
+        }
+    }
+
+    @include responsive("small") {
+        .carousel__content {
+            text-align: center;
+
+            .carousel__item1 {
+                width: 70%;
+                padding-top: 20px !important;
+                .carousel__popular {
+                    display: none;
+                }
+                form.carousel__search {
+                    width: 100%;
+                    .input-group {
+                        display: inline-block;
+                        span.search__item {
+                            display: none;
+                        }
+                        input {
+                            display: block;
+                            border-right-color: $color-black-2 !important;
+                            width: 100%;
+                            margin-bottom: $mg-2;
+                        }
+                        .input-group-append {
+                            display: block;
+                            border-radius: $border-darius-0 !important;
+                        }
+                    }
+                }
+                margin-left: 100px;
+                padding-left: 0;
+                padding-top: 70px;
+                h1 {
+                    font-size: $fs-4;
+                    margin-bottom: 20px;
+                }
+            }
+            .carousel__item2 {
+                display: none;
+            }
+        }
+    }
+}
+    @include responsive("small") {
+        .carousel {
+            min-height: 420px;
+        }
+    }
+
+/* CSS PARTNER */
+.partner {
+    .partner__content {
+        width: 100%;
+        margin-bottom: 120px;
+        height: 60px;
+        box-shadow: 0 3px 5px 1px $color-black-4;
+        ul {
+            // width: 60%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            align-items: center;
+            li {
+                padding-right: 60px;
+            }
+        }
+    }
+
+/* RESPONSIVE PARTNER */
+    @include responsive("extra-large") {
+        .partner__content {
+            ul {
+                li {
+                    padding-right: 40px;
+                }
+            }
+        }
+    }
+    @include responsive("large") {
+        .partner__content {
+            ul {
+                li {
+                    padding-right: 25px;
+                }
+            }
+        }
+    }
+    @include responsive("medium") {
+        .partner__content {
+            ul {
+                li {
+                    padding-right: 20px;
+                }
+            }
+        }
+    }
+    @include responsive("small") {
+        .partner__content {
+            margin-bottom: 50px;
+            ul {
+                li.partner__hide {
+                    display: none;
+                }
+                li {
+                    padding-right: 18px;
+                }
+            }
+        }
+    }
+}

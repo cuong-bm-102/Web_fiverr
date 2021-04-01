@@ -1,0 +1,68 @@
+/* CSS FEEDBACK */
+.feedback {
+    .feedback__content {
+        @extend %styleWidth;
+        .owl-carousel {
+            .owl-nav {
+                button.owl-next,
+                button.owl-prev {
+                    top: 35% !important;
+                }
+                button.owl-next {
+                    right: -24px;
+                }
+                button.owl-prev {
+                    left: -24px;
+                }
+            }
+        }
+        .feedback--carousel {
+            box-shadow: 0 1px 5px 1px $color-black-6;
+            .item {
+                height: 404px;
+                display: flex;
+                flex-wrap: wrap;
+                .feedback__video {
+                    img {
+                        height: 100%;
+                        width: 600px;
+                    }
+                }
+                .feedback__comment {
+                    width: 505px;
+                    padding: 72px 64px 0 38px;
+                    p {
+                        @include styleText($color-gray-0, $fs-1 + 3, $fw-5);
+                        line-height: $line-height-0 + 4;
+                        padding-bottom: $pd-1;
+                        font-family: Georgia, "Times New Roman", Times, serif;
+                    }
+                    img {
+                        width: 115px;
+                        height: 35px;
+                        padding-top: $pd-5;
+                    }
+                }
+            }
+        }
+    }
+
+/* RESPONSIVE FEEDBACK */
+    @include responsive("large"){
+        .feedback--carousel{
+            .item{
+                .feedback__video{  
+                    width: 100%;
+                    height: auto;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .feedback__comment{
+                    display: none;
+                }
+            }
+        }
+    }
+}

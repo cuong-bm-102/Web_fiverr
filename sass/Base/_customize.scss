@@ -1,0 +1,72 @@
+.owl-theme {
+    .owl-dots {
+        .owl-dot {
+            display: none;
+        }
+    }
+}
+.owl-carousel {
+    .owl-nav {
+        button.owl-next,
+        button.owl-prev {
+            @include styleText($color-black-1, $fs-1, $fw-0);
+            background-color: $color-white-0;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px 2px $color-black-5;
+            position: absolute;
+            top: 30%;
+            &:hover {
+                background-color: $color-white-0;
+                color: $color-black-1;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+        button.owl-next {
+            right: -16px;
+        }
+        button.owl-prev {
+            left: -16px;
+        }
+    }
+}
+.modal {
+    .modal-header {
+        border: none;
+        h5 {
+            color: $color-black-1;
+        }
+        button:focus {
+            outline: none;
+        }
+    }
+    .modal-body {
+        ul {
+            list-style-type: none;
+            li {
+                padding: 15px 20px !important;
+                &:hover {
+                    background-color: $color-white-4;
+                }
+                a {
+                    text-decoration: none;
+                    color: $color-black-3 !important;
+                }
+            }
+        }
+    }
+}
+h2 {
+    @include styleText($color-black-3, $fs-3, $fw-0);
+    padding-bottom: $pd-1 + 4;
+    @include responsive("small") {
+        font-size: $fs-4;
+    }
+}
+h6 {
+    @include styleText($color-black-3, $fs-1 + 2, $fw-0);
+    padding-bottom: $pd-3;
+}

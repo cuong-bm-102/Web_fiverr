@@ -1,0 +1,8 @@
+%styleWidth {
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: $mg-3;
+    @include responsive("large"){
+        margin-bottom: $mg-8;
+    }
+}

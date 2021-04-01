@@ -1,0 +1,67 @@
+/* CSS VIEWED */
+.viewed {
+    @extend %styleWidth;
+    .viewed__content {
+        
+        .card--viewed {
+            margin: 0 15px;
+            .card__top {
+                display: flex;
+                .card__avatar {
+                    padding-top: $pd-5 + 2;
+                    margin-right: $mg-0;
+                    img {
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 50%;
+                    }
+                }
+                .card__info {
+                    a {
+                        color: $color-black-1;
+                        text-decoration: none;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                    p {
+                        margin-bottom: $mg-2 - 3;
+                        margin-top: -5px;
+                    }
+                }
+            }
+            .card-text {
+                @include styleText($color-black-2, $fs-1, $fw-2);
+                cursor: pointer;
+                transition: all 0.2s;
+                &:hover {
+                    color: $color-green-0;
+                }
+            }
+            .card__star {
+                @include styleText($color-yellow, $fs-0, $fw-0);
+                span {
+                    @include styleText($color-gray-7, $fs-0, $fw-2);
+                    margin-left: 2px !important;
+                }
+            }
+            .card-footer {
+                padding: $pd-6 $pd-6 + 2;
+                display: flex;
+                justify-content: space-between;
+                background-color: $color-white-0;
+                i {
+                    @include styleText($color-gray-6, $fs-1, $fw-4);
+                    line-height: $line-height-0;
+                }
+                p {
+                    display: inline;
+                    @include styleText($color-gray-2, $fs-0 - 2, $fw-5);
+                }
+                span {
+                    @include styleText($color-gray-2, $fs-1 + 2, $fw-5);
+                }
+            }
+        }
+    }
+}
